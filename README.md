@@ -10,3 +10,4 @@ onde:
 * e R = alfa/gamma1 é o número de reprodução vírus
 
 
+![Image of Ajuste_SUCQ] (https://github.com/ravellys/COVID-19-Brasil/blob/master/Previs%C3%A3o%20Futura.html)
