@@ -71,7 +71,7 @@ A partir das taxas de letalidade obtidas pelo modelo SUQC, foi possível estimar
 
 ![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/total%20de%20mortes.png)
 
-É importante lembrar que o Brasil atualmente tem poucos centros de ploriferação do vírus (como São Paulo) o que pode levar a subestimativa dos valores totais de mortes. Além disso, com a chegada dos novos testes ( dia de de abril) é possível que a dinâmica de casos confirmados seja alterada o que irá alterar significativamente as estimativas de reprodutividade do vírus e, por consequência, o número total de mortos. 
+É importante lembrar que o Brasil atualmente tem poucos centros de ploriferação do vírus (como São Paulo) o que pode levar a subestimativa dos valores totais de mortes. Além disso, com a chegada dos novos testes ( dia 2 de abril) é possível que a dinâmica de casos confirmados seja alterada o que irá alterar significativamente as estimativas de reprodutividade do vírus e, por consequência, o número total de mortos. 
 
 
 
