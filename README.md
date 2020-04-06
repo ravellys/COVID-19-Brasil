@@ -23,7 +23,7 @@ onde:
 ## Output do modelo 
 Na Figura abaixo são demonstrados as variavéis de saída do modelo em uma simulação de 365 dias a partir do dia 18.
 
-![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/plot_sucp/COVID-19%20Brasil.png)
+![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/plot_sucq/COVID-19%20Brasil.png)
   
 ## Avaliação da mudança de tendência após as medidas de contenção social
 
