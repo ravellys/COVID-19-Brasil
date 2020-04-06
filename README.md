@@ -38,7 +38,7 @@ onde:
 
 ## Estimativa do total de Mortes
 
-![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/total de mortes.png)
+![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/total%20de%20mortes.png)
 
 
 
