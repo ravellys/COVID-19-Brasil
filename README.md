@@ -45,10 +45,22 @@ Um dos índices mais importande no combate a disseminação viral é o número d
 
 ## Avaliação da Letalidade 
 
-Na Figura abaixo é demonstrada a letalidade atual do vírus 
+Na Figura abaixo é demonstrada a letalidade atual do vírus, do qual foi calculada a partir da razão entre o número total de óbitos e o número total de casos confirmados. Nota-se que o estado com a maior letalidade é o Piauí (PI) (com cerca de 17%), contudo o estado só apresentou até agora cerca de 23 casos confirmados. o Brasil apresenta cerca de 4.4% de taxa de letalidade, índice próximo ao apresentado na China (país de origem da doença). Até agora, os estados do Acre e Tocantins não apresentaram óbitos pelo COVID-19.
+
 ![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/mortality.png)
 
-## Avaliação da Letalidade (com o número total de infectados estimados pelo SUQC)
+No geral, três aspectos são os de maior influência na Letalidade do vírus em uma nação/estado:
+
+1. A pirâmide etária do país, da qual indicará o número de pessoas acima de 60 anos (que fazem parte do grupo de risco);
+2. O número de pessoas com comorbidades que as tornem mais sensiveis ao vírus;
+3. O número de testes para detecção do vírus no país.
+
+O primeiro aspecto pode ser observado em países Europeus como a Itália e a Espanha, dos quais apresentam uma grande quantidade de óbitos por terem um país com uma grande quantidade de Idosos. Atualmente, a motalidade desses páises são aproximadamente de 12% e 9%, o que é de 2 a 3 vezes maior que a apresentada atualmente pelo Brasil. Além disso, no Brasil cerca de 85% dos óbitos estão relacionados com pessoas com algum tipo de comorbidade (o que corrobora com o segundo aspecto). Devido a isso, além de aumentar o número de óbitos no grupo de idosos, as comorbidades acabam levandofacilitando o óbito de pessoas mais jovens também.
+
+Os dois primeiros aspectos aumentam a letalidade por aumentar o número vítimas do vírus, contudo, o terceiro aspecto se diferencia por aumentar o monitoramento do número de casos, que por consequência diminui a letalidade. Países como Espanha e Corea do Sul estão ganhando grande destaque no combate a ploriferação do vírus pelo grande número de teste que estão sendo realizados. Graças a isso, esses países estão conseguindo detectar um grande número de pessoas assintomáticas resultando em taxas de letalidade de cerca de 1%. Esse fato, além de "contribuir" para a diminuição da letalidade,
+
+Contrário a isso, o Brasil, até o momento, não possui capidade de 
+
 
 ![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/mortality_real_estimada.png)
 
