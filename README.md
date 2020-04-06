@@ -27,13 +27,15 @@ Na Figura abaixo são demonstrados as variavéis de saída do modelo em uma simu
   
 ## Avaliação da mudança de tendência após as medidas de contenção social
 
-A partir do dia 18 de março, em busca de conter a disseminação do COVID-19, a maior parte dos estados brasileiros adotaram medidas de isolamento social. Desse modo a Figura abaixo busca demonstrar o impacto  das medidas de isolamento na tendência do aumento de Casos no Brasil e nos estados Ceará e Pernambuco. Nota-se um grande impacto no crescimento de casos, no Brasil houve uma diminuição de cerca de 10 vezes, e nos estados houve uma diminuição de quase 1000 vezes. É importante salientar que o estados, CE e PE, tomaram medidas de restrição social na primeira semana de epidemia, esse fato mostrou-se primordial no combate a disseminação do vírus.
+A partir do dia 18 de março, em busca de conter a disseminação do COVID-19, a maior parte dos estados brasileiros adotaram medidas de isolamento social. Desse modo a Figura abaixo busca demonstrar o impacto  das medidas de isolamento na tendência do aumento de Casos no Brasil e nos estados Ceará e Pernambuco. Nota-se um grande impacto no crescimento de casos, no Brasil houve uma diminuição de cerca de 10 vezes, e no estado CE houve uma diminuição de quase 2500 vezes. 
 
 ![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/cum_cases.png)
 
+Nota-se também que o número de casos estimados com a tendência inicial em ambos estados superou o total de casos no Brasil, o que é fisicamente impossível já que esses casos estão inseridos dentro do total de casos brasileiros. Isso ocorreu pelo fato do número de casos totais (antes do dia 18 de março) do Brasil serem marjoritariamente composto por casos do estado de São Paulo (primeiro epicentro da doença) o que tornou a influencia dos outros estados mínimas na curva brasileira. Contudo, esses estados inicialmente apresentaram uma grande taxa de reprodução do vírus, na qual o mesmo dobrava a cada dia no Ceará e ficou cerca de oito vezes maior (após 5 dias) em Pernambuco. É importante salientar também que Pernambuco tomou medidas de restrição social na primeira semana de epidemia mesmo apresentando baixo número de casos. Esse fato mostrou-se primordial no combate a disseminação do vírus sendo de fundamental importância na diminuição dos epicentros de epidemia do vírus ao longo do país.
+
 ## Simulação do pico de infectados
 
-Com o modelo também foi possível simular o pico dos casos. É possível notar que houve um grande achatamento da curva no estado de Pernambuco, do qual apresenta o pico no mês de dezembro. No Ceará o pico foi simulado para entre o mês de maio e junho, também é possível notar que o mesmo apresenta uma curva com grande incidências diárias.
+Com o modelo também foi possível simular o pico dos casos. É possível notar que houve um grande achatamento da curva no estado de Pernambuco, do qual apresenta o pico no mês de dezembro. No Ceará o pico foi simulado para entre o mês de maio e junho, também é possível notar que o mesmo apresenta uma curva com grande incidências diárias. Atualmente, o CE apresenta a maior possibilidade de ser o primeiro estado a atingir o pico da curva. 
 
 ![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/daily_cases.png)
 
