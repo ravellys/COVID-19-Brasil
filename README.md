@@ -67,7 +67,7 @@ Nota-se que, em relação a letalidade calcula a partir dos casos confirmados, h
 
 ## Estimativa do total de Mortes
 
-A partir das taxas de letalidade obtidas pelo modelo SUQC, foi possível estimar a quantidade total de óbitos ao fim da simulação (dia 18/03/2021). Estimasse um total de 544 mil mortes no Brasil ao final desse período, na qual a maior parte será do estado de São Paulo (144 mil) seguido pela Bahia (54 mil). 
+A partir das taxas de letalidade obtidas pelo modelo SUQC, foi possível estimar a quantidade total de óbitos ao fim da simulação (dia 18/03/2021). Estimasse um total de 544 mil mortes no Brasil ao final desse período, na qual a maior parte será do estado de São Paulo (144 mil) seguido pela Bahia (59.5 mil). 
 
 ![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/total%20de%20mortes.png)
 
