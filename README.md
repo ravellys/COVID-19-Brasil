@@ -29,25 +29,25 @@ Na Figura abaixo são demonstrados as variavéis de saída do modelo em uma simu
 
 A partir do dia 18 de março, em busca de conter a disseminação do COVID-19, a maior parte dos estados brasileiros adotaram medidas de isolamento social. Desse modo a Figura abaixo busca demonstrar o impacto  das medidas de isolamento na tendência do aumento de Casos no Brasil e nos estados Ceará e Pernambuco. Nota-se um grande impacto no crescimento de casos, no Brasil houve uma diminuição de cerca de 10 vezes, e nos estados houve uma diminuição de quase 1000 vezes. É importante salientar que o estados, CE e PE, tomaram medidas de restrição social na primeira semana de epidemia, esse fato mostrou-se primordial no combate a disseminação do vírus.
 
-![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/cum_cases.png)
+![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/cum_cases.png)
 
 ## Simulação do pico de infectados
 
 Com o modelo também foi possível simular o pico dos casos. É possível notar que houve um grande achatamento da curva no estado de Pernambuco, do qual apresenta o pico no mês de dezembro. No Ceará o pico foi simulado para entre o mês de maio e junho, também é possível notar que o mesmo apresenta uma curva com grande incidências diárias.
 
-![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/daily_cases.png)
+![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/daily_cases.png)
 
 ## Simulação do número de Reprodutividade (R0)
 
 Um dos índices mais importande no combate a disseminação viral é o número de Reprodutividade. o R0 nos indica a taxa média de contaminação de pessoas por um infectado. Na Figura abaixo é apresentado o R0 em no Brasil e nos seus estados. Nota-se que o Amapá (AP) é o que apresenta maior R0 (próximo a 6), nesse estado o número de casos tem uma grande taxa de crescimento, na qual tende a dobrar entre 2 e 3 dias.
 
-![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/R0.png)
+![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/R0.png)
 
 ## Avaliação da Letalidade 
 
 Na Figura abaixo é demonstrada a letalidade atual do vírus, do qual foi calculada a partir da razão entre o número total de óbitos e o número total de casos confirmados. Nota-se que o estado com a maior letalidade é o Piauí (PI) (com cerca de 17%), contudo o estado só apresentou até agora cerca de 23 casos confirmados. o Brasil apresenta cerca de 4.4% de taxa de letalidade, índice próximo ao apresentado na China (país de origem da doença). Até agora, os estados do Acre e Tocantins não apresentaram óbitos pelo COVID-19.
 
-![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/mortality.png)
+![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/mortality.png)
 
 No geral, três aspectos são os de maior influência na Letalidade do vírus em uma nação/estado:
 
@@ -61,7 +61,7 @@ Os dois primeiros aspectos aumentam a letalidade por aumentar o número vítimas
 
 Contrário a isso, o Brasil, até o momento, não possui capidade estrutual de realizar um grande quantitativo de teste. Esse fato dificulta a visualização do real cenário de infectados no país, o que por sua vez fornece estimativas errôneas da capacidade ploriferação do vírus. Contudo, o modelo SUQC é capaz de fornecer uma estimativa do total de infectados (I). Com isso, podemos estimar a verdadeira letalidade do vírus, como demonstrado na Figura abaixo:
 
-![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/mortality_real_estimada.png)
+![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/mortality_real_estimada.png)
 
 Nota-se que, em relação a letalidade calcula a partir dos casos confirmados, houve uma redução de cerca de três vezes para o Brasil. Nessa nova avaliação o país apresentou de 1.5% de letalidade, deixando bem próximo da taxa de letalidade de países com maior potencial de detecção de pessoas pré-sintomáticas como a Alemanha (cerca de 1%). Isso indica que o modelo apresenta grande capacidade em estimar o número de pessoas pré-sintomáticas que não estão em confinamento (U). Isso o torna uma ferramenta crucial para a tomada de decisões a respeito da intensificação ou não do isolamento social. 
 
@@ -69,7 +69,7 @@ Nota-se que, em relação a letalidade calcula a partir dos casos confirmados, h
 
 A partir das taxas de letalidade obtidas pelo modelo SUQC, foi possível estimar a quantidade total de óbitos ao fim da simulação (dia 18/03/2021). Estimasse um total de 544 mil mortes no Brasil ao final desse período, na qual a maior parte será do estado de São Paulo (144 mil) seguido pela Bahia (59.5 mil). 
 
-![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/total%20de%20mortes.png)
+![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/total%20de%20mortes.png)
 
 É importante lembrar que o Brasil atualmente tem poucos centros de ploriferação do vírus (como São Paulo) o que pode levar a subestimativa dos valores totais de mortes. Além disso, com a chegada dos novos testes ( dia 2 de abril) é possível que a dinâmica de casos confirmados seja alterada o que irá alterar significativamente as estimativas de reprodutividade do vírus e, por consequência, o número total de mortos. 
 
