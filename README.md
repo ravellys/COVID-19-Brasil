@@ -33,7 +33,7 @@ A partir do dia 18 de março, em busca de conter a disseminação do COVID-19, a
 
 ## Simulação do pico de infectados
 
-Com o modelo também foi possível simular o pico dos casos. É possível notar que houve um grande achatamento da curva no estado de Pernambuco, do qual apresenta o pico no mês de dezembro. No Brasil o pico foi simulado para entre o mês de maio e junho, também é possível notar que o mesmo apresenta uma curva com grande incidências diárias.
+Com o modelo também foi possível simular o pico dos casos. É possível notar que houve um grande achatamento da curva no estado de Pernambuco, do qual apresenta o pico no mês de dezembro. No Ceará o pico foi simulado para entre o mês de maio e junho, também é possível notar que o mesmo apresenta uma curva com grande incidências diárias.
 
 ![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/daily_cases.png)
 
