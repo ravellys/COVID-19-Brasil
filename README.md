@@ -21,7 +21,7 @@ onde:
 * e R = alfa/gamma1 é o número de reprodução vírus
 
 ## Output do modelo 
-Na Figura abaixo são demonstrados as variavéis de saída do modelo em uma simulação de 365 dias a partir do dia 18.
+Na Figura abaixo são demonstrados as variavéis de saída do modelo em uma simulação de 365 dias a partir do dia 18 de março.
 
 ![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/plot_sucq/COVID-19%20Brasil.png)
   
@@ -55,7 +55,7 @@ No geral, três aspectos são os de maior influência na Letalidade do vírus em
 2. O número de pessoas com comorbidades que as tornem mais sensiveis ao vírus;
 3. O número de testes para detecção do vírus no país.
 
-O primeiro aspecto pode ser observado em países Europeus como a Itália e a Espanha, dos quais apresentam uma grande quantidade de óbitos por terem um país com uma grande quantidade de Idosos. Atualmente, a motalidade desses páises são aproximadamente de 12% e 9%, o que é de 2 a 3 vezes maior que a apresentada atualmente pelo Brasil. Além disso, no Brasil cerca de 85% dos óbitos estão relacionados com pessoas com algum tipo de comorbidade (o que corrobora com o segundo aspecto). Devido a isso, além de aumentar o número de óbitos no grupo de idosos, as comorbidades acabam levandofacilitando o óbito de pessoas mais jovens também.
+O primeiro aspecto pode ser observado em países Europeus como a Itália e a Espanha, dos quais apresentam uma grande quantidade de óbitos por terem um país com uma grande quantidade de Idosos (cerca de 85% do total de óbitos no Brasil). Atualmente, a motalidade desses páises são aproximadamente de 12% e 9%, o que é de 2 a 3 vezes maior que a apresentada atualmente pelo Brasil. Além disso, no Brasil cerca de 82% dos óbitos estão relacionados com pessoas com algum tipo de comorbidade (o que corrobora com o segundo aspecto). Devido a isso, além de aumentar o número de óbitos no grupo de idosos, as comorbidades acabam levandofacilitando o óbito de pessoas mais jovens também.
 
 Os dois primeiros aspectos aumentam a letalidade por aumentar o número vítimas do vírus, contudo, o terceiro aspecto se diferencia por aumentar o monitoramento do número de casos, que por consequência diminui a letalidade. Países como a Alemanha e a Corea do Sul estão ganhando grande destaque no combate a ploriferação do vírus pelo grande número de teste que estão sendo realizados. Graças a isso, esses países estão conseguindo detectar um grande número de pessoas pré-sintomáticas resultando em taxas de letalidade de cerca de 1%. Esse fato, além de "contribuir" para a diminuição da letalidade,
 
