@@ -59,10 +59,11 @@ O primeiro aspecto pode ser observado em países Europeus como a Itália e a Esp
 
 Os dois primeiros aspectos aumentam a letalidade por aumentar o número vítimas do vírus, contudo, o terceiro aspecto se diferencia por aumentar o monitoramento do número de casos, que por consequência diminui a letalidade. Países como Espanha e Corea do Sul estão ganhando grande destaque no combate a ploriferação do vírus pelo grande número de teste que estão sendo realizados. Graças a isso, esses países estão conseguindo detectar um grande número de pessoas assintomáticas resultando em taxas de letalidade de cerca de 1%. Esse fato, além de "contribuir" para a diminuição da letalidade,
 
-Contrário a isso, o Brasil, até o momento, não possui capidade de 
-
+Contrário a isso, o Brasil, até o momento, não possui capidade estrutual de realizar um grande quantitativo de teste. Esse fato dificulta a visualização do real cenário de infectados no país, o que por sua vez fornece estimativas errôneas da capacidade ploriferação do vírus. Contudo, o modelo SUQC é capaz de fornecer uma estimativa do total de infectados (I). Com isso, podemos estimar a verdadeira letalidade do vírus, como demonstrado na Figura abaixo:
 
 ![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/mortality_real_estimada.png)
+
+Nota-se que, em relação a letalidade calcula a partir dos casos confirmados,  
 
 ## Estimativa do total de Mortes
 
