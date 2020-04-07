@@ -27,27 +27,27 @@ Na Figura abaixo são demonstrados as variavéis de saída do modelo em uma simu
   
 ## Avaliação da mudança de tendência após as medidas de contenção social
 
-A partir do dia 18 de março, em busca de conter a disseminação do COVID-19, a maior parte dos estados brasileiros adotaram medidas de isolamento social. Desse modo a Figura abaixo busca demonstrar o impacto  das medidas de isolamento na tendência do aumento de Casos no Brasil e nos estados Ceará e Pernambuco. Nota-se um grande impacto no crescimento de casos, no Brasil houve uma diminuição de cerca de 10 vezes, e no estado CE houve uma diminuição de quase 2500 vezes. 
+A partir do dia 18 de março, em busca de conter a disseminação do COVID-19, a maior parte dos estados brasileiros adotaram medidas de isolamento social. Desse modo a Figura abaixo busca demonstrar o impacto  das medidas de isolamento na tendência do aumento de Casos no Brasil e nos estados Ceará e Pernambuco. Nota-se um grande impacto no crescimento de casos, no Brasil houve uma diminuição de cerca de 10 vezes, e em ambos estados o impacto foi muito maior. As simulações atuais entre os estados manteu-se paralela entre si, indicando a dinâmica de casos do estado de Pernambuco será semelhante ao estado do Ceará, com uma diferença aproximada de 15 dias.
 
 ![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/cum_cases.png)
 
-Nota-se também que o número de casos estimados com a tendência inicial em ambos estados superou o total de casos no Brasil, o que é fisicamente impossível já que esses casos estão inseridos dentro do total de casos brasileiros. Isso ocorreu pelo fato do número de casos totais (antes do dia 18 de março) do Brasil serem marjoritariamente composto por casos do estado de São Paulo (primeiro epicentro da doença) o que tornou a influencia dos outros estados mínimas na curva brasileira. Contudo, esses estados inicialmente apresentaram uma grande taxa de reprodução do vírus, na qual o mesmo dobrava a cada dia no Ceará e ficou cerca de oito vezes maior (após 5 dias) em Pernambuco. É importante salientar também que Pernambuco tomou medidas de restrição social na primeira semana de epidemia mesmo apresentando baixo número de casos. Esse fato mostrou-se primordial no combate a disseminação do vírus sendo de fundamental importância na diminuição dos epicentros de epidemia do vírus ao longo do país.
+Nota-se também que o número de casos estimados com a tendência inicial em ambos estados superou o total de casos no Brasil, o que é fisicamente impossível já que esses casos estão inseridos dentro do total de casos brasileiros. Isso ocorreu pelo fato do número de casos totais (antes do dia 18 de março) do Brasil serem marjoritariamente composto por casos do estado de São Paulo (primeiro epicentro da doença) o que tornou a influencia dos outros estados mínimas na curva brasileira. Contudo, esses estados inicialmente apresentaram uma grande taxa de reprodução do vírus, na qual o mesmo dobrava a cada dia no Ceará e ficou cerca de oito vezes maior (após 5 dias) em Pernambuco. Por tanto, medidas de distânciamento social são primordiais no combate a disseminação do vírus, além disso, com essas medidas é possível retardar o número de epicentros.
 
 ## Simulação do pico de infectados
 
-Com o modelo também foi possível simular o pico dos casos. É possível notar que houve um grande achatamento da curva no estado de Pernambuco, do qual apresenta o pico no mês de dezembro. No Ceará o pico foi simulado para entre o mês de maio e junho, também é possível notar que o mesmo apresenta uma curva com grande incidências diárias. Atualmente, o CE apresenta a maior possibilidade de ser o primeiro estado a atingir o pico da curva. 
+Nos cenário atual, os estado de Pernambuco e do Ceará obtiveram o pico simulado no ínicio de mês de julho. Já o Brasil apresentou o pico simulado no mês de agosto. Nota-se também um maior achatamento na curva do Brasil que nos outros estados.
 
 ![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/daily_cases.png)
 
 ## Simulação do número de Reprodutividade (R0)
 
-Um dos índices mais importande no combate a disseminação viral é o número de Reprodutividade. o R0 nos indica a taxa média de contaminação de pessoas por um infectado. Na Figura abaixo é apresentado o R0 em no Brasil e nos seus estados. Nota-se que o Amapá (AP) é o que apresenta maior R0 (próximo a 6), nesse estado o número de casos tem uma grande taxa de crescimento, na qual tende a dobrar entre 2 e 3 dias.
+Um dos índices mais importande no combate a disseminação viral é o número de Reprodutividade. o R0 nos indica a taxa média de contaminação de pessoas por um infectado. Na Figura abaixo é apresentado o R0 em no Brasil e nos seus estados. Nota-se que o Amapá (AP) é o que apresenta maior R0, nesse estado o número de casos tem uma grande taxa de crescimento, na qual tende a dobrar entre 2 e 3 dias.
 
 ![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/R0.png)
 
 ## Avaliação da Letalidade 
 
-Na Figura abaixo é demonstrada a letalidade atual do vírus, do qual foi calculada a partir da razão entre o número total de óbitos e o número total de casos confirmados. Nota-se que o estado com a maior letalidade é o Piauí (PI) (com cerca de 17%), contudo o estado só apresentou até agora cerca de 23 casos confirmados. o Brasil apresenta cerca de 4.4% de taxa de letalidade, índice próximo ao apresentado na China (país de origem da doença). Até agora, os estados do Acre e Tocantins não apresentaram óbitos pelo COVID-19.
+Na Figura abaixo é demonstrada a letalidade atual do vírus, do qual foi calculada a partir da razão entre o número total de óbitos e o número total de casos confirmados. Nota-se que o estado com a maior letalidade é o Piauí (PI), contudo o estado só apresentou até agora cerca de 23 casos confirmados. o Brasil apresenta cerca de 4.6% de taxa de letalidade, índice próximo ao apresentado na China (país de origem da doença). Até agora, os estados do Acre e Tocantins não apresentaram óbitos pelo COVID-19.
 
 ![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/mortality.png)
 
@@ -69,11 +69,18 @@ Nota-se que, em relação a letalidade calcula a partir dos casos confirmados, h
 
 ## Estimativa do total de Mortes
 
-A partir das taxas de letalidade obtidas pelo modelo SUQC, foi possível estimar a quantidade total de óbitos ao fim da simulação (dia 18/03/2021). Estimasse um total de 544 mil mortes no Brasil ao final desse período, na qual a maior parte será do estado de São Paulo (144 mil) seguido pela Bahia (59.5 mil). 
+A partir das taxas de letalidade obtidas pelo modelo SUQC, foi possível estimar a quantidade total de óbitos ao fim da simulação (dia 18/03/2021). Estimasse um total de 544 mil mortes no Brasil ao final desse período, na qual a maior parte será do estado de São Paulo,  seguido por Rio de Janeiro e Pernambuco. 
 
 ![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/total%20de%20mortes.png)
 
 É importante lembrar que o Brasil atualmente tem poucos centros de ploriferação do vírus (como São Paulo) o que pode levar a subestimativa dos valores totais de mortes. Além disso, com a chegada dos novos testes ( dia 2 de abril) é possível que a dinâmica de casos confirmados seja alterada o que irá alterar significativamente as estimativas de reprodutividade do vírus e, por consequência, o número total de mortos. 
+
+## Reprodutividade do vírus ao longo do tempo
+
+Na figura abaixo é demonstrado o aumento do número de reprodução do vírus ao longo do tempo. É possível notar que o Brasil vem tendo uma tendência de decaimento, enquanto que o estado de Pernambuco tem uma tendência de crescimento.
+
+![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/daily_R0.png)
+
 
 
 
