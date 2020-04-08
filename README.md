@@ -33,11 +33,19 @@ A partir do dia 18 de março, em busca de conter a disseminação do COVID-19, a
 
 Nota-se também que o número de casos estimados com a tendência inicial em ambos estados superou o total de casos no Brasil, o que é fisicamente impossível já que esses casos estão inseridos dentro do total de casos brasileiros. Isso ocorreu pelo fato do número de casos totais (antes do dia 18 de março) do Brasil serem marjoritariamente composto por casos do estado de São Paulo (primeiro epicentro da doença) o que tornou a influencia dos outros estados mínimas na curva brasileira. Contudo, esses estados inicialmente apresentaram uma grande taxa de reprodução do vírus, na qual o mesmo dobrava a cada dia no Ceará e ficou cerca de oito vezes maior (após 5 dias) em Pernambuco. Por tanto, medidas de distânciamento social são primordiais no combate a disseminação do vírus, além disso, com essas medidas é possível retardar o número de epicentros.
 
+## Projeção para o total de infectados no dia 14/04/2020
+
+![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/cases_7d_barplot.png)
+
 ## Simulação do pico de infectados
 
 Nos cenário atual, os estado de Pernambuco e do Ceará obtiveram o pico simulado no ínicio de mês de julho. Já o Brasil apresentou o pico simulado no mês de agosto. Nota-se também um maior achatamento na curva do Brasil que nos outros estados.
 
 ![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/daily_cases/daily_cases.png)
+![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/diamax_barplot.png)
+![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/max_cases_barplot.png)
+
+
 
 ## Simulação do número de Reprodutividade (R0)
 
