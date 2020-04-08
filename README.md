@@ -79,11 +79,11 @@ A partir das taxas de letalidade obtidas pelo modelo SUQC, foi possível estimar
 
 Na figura abaixo é demonstrado o aumento do número de reprodução do vírus ao longo do tempo. É possível notar que o Brasil vem tendo uma tendência de decaimento, enquanto que o estado de Pernambuco tem uma tendência de crescimento.
 
-![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/R0_time/R0_timeBrasil.png)
-![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/R0_time/R0_timePE.png)
-![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/R0_time/R0_timeCE.png)
-![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/R0_time/R0_timeAM.png)
-![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/R0_time/R0_timeSP.png)
+![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/R0_time/R0_estad.png)
+![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/R0_time/PE.png)
+![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/R0_time/CE.png)
+![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/R0_time/AM.png)
+![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/R0_time/SP.png)
 
 
 
