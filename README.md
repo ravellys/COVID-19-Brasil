@@ -37,7 +37,7 @@ Nota-se também que o número de casos estimados com a tendência inicial em amb
 
 Nos cenário atual, os estado de Pernambuco e do Ceará obtiveram o pico simulado no ínicio de mês de julho. Já o Brasil apresentou o pico simulado no mês de agosto. Nota-se também um maior achatamento na curva do Brasil que nos outros estados.
 
-![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/daily_cases.png)
+![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/daily_cases/daily_cases.png)
 
 ## Simulação do número de Reprodutividade (R0)
 
@@ -65,11 +65,11 @@ Contrário a isso, o Brasil, até o momento, não possui capidade estrutual de r
 
 ![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/mortality_real_estimada.png)
 
-Nota-se que, em relação a letalidade calcula a partir dos casos confirmados, houve uma redução de cerca de três vezes para o Brasil. Nessa nova avaliação o país apresentou de 1.5% de letalidade, deixando bem próximo da taxa de letalidade de países com maior potencial de detecção de pessoas pré-sintomáticas como a Alemanha (cerca de 1%). Isso indica que o modelo apresenta grande capacidade em estimar o número de pessoas pré-sintomáticas que não estão em confinamento (U). Isso o torna uma ferramenta crucial para a tomada de decisões a respeito da intensificação ou não do isolamento social. 
+Nota-se que, em relação a letalidade calcula a partir dos casos confirmados, houve uma redução de cerca de três vezes para o Brasil. Nessa nova avaliação o país apresentou de 1.9% de letalidade, deixando bem próximo da taxa de letalidade de países com maior potencial de detecção de pessoas pré-sintomáticas como a Alemanha (cerca de 1%). Isso indica que o modelo apresenta grande capacidade em estimar o número de pessoas pré-sintomáticas que não estão em confinamento (U). Isso o torna uma ferramenta crucial para a tomada de decisões a respeito da intensificação ou não do isolamento social. 
 
 ## Estimativa do total de Mortes
 
-A partir das taxas de letalidade obtidas pelo modelo SUQC, foi possível estimar a quantidade total de óbitos ao fim da simulação (dia 18/03/2021). Estimasse um total de 803 mil mortes no Brasil ao final desse período, na qual a maior parte será do estado de São Paulo,  seguido por Rio de Janeiro e Pernambuco. 
+A partir das taxas de letalidade obtidas pelo modelo SUQC, foi possível estimar a quantidade total de óbitos ao fim da simulação (dia 18/03/2021). Estimasse um total de 870 mil mortes no Brasil ao final desse período, na qual a maior parte será do estado de São Paulo,  seguido por Rio de Janeiro e Bahia. 
 
 ![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/total%20de%20mortes.png)
 
@@ -79,7 +79,15 @@ A partir das taxas de letalidade obtidas pelo modelo SUQC, foi possível estimar
 
 Na figura abaixo é demonstrado o aumento do número de reprodução do vírus ao longo do tempo. É possível notar que o Brasil vem tendo uma tendência de decaimento, enquanto que o estado de Pernambuco tem uma tendência de crescimento.
 
-![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/daily_R0.png)
+![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/R0_time/R0_timeBrasil.png)
+![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/R0_time/R0_timePE.png)
+![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/R0_time/R0_timeCE.png)
+![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/R0_time/R0_timeAM.png)
+![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/R0_time/R0_timeSP.png)
+
+
+
+
 
 
 
