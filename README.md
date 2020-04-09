@@ -23,7 +23,7 @@ onde:
 ## Output do modelo 
 Na Figura abaixo são demonstrados as variavéis de saída do modelo em uma simulação de 365 dias a partir do dia 18 de março.
 
-![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/plot_sucq/COVID-19%20Brasil.png)
+![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/plot_sucq/COVID-19%20Brazil.png)
   
 ## Avaliação da mudança de tendência após as medidas de contenção social
 
@@ -49,7 +49,7 @@ Nos cenário atual, os estado de Pernambuco e do Ceará obtiveram o pico simulad
 
 ## Simulação do número de Reprodutividade (R0)
 
-Um dos índices mais importande no combate a disseminação viral é o número de Reprodutividade. o R0 nos indica a taxa média de contaminação de pessoas por um infectado. Na Figura abaixo é apresentado o R0 no Brasil e nos seus estados. Nota-se que o Amapá (AP) é o que apresenta maior R0, nesse estado o número de casos tem uma grande taxa de crescimento, na qual tende a dobrar entre 2 e 3 dias.
+Um dos índices mais importande no combate a disseminação viral é o número de Reprodutividade. o R0 nos indica a taxa média de contaminação de pessoas por um infectado. Na Figura abaixo é apresentado o R0 no Brasil e nos seus estados. Nota-se que o SE é o que apresenta maior R0, nesse estado o número de casos tem uma grande taxa de crescimento, na qual tende a dobrar entre 5 a 7 dias.
 
 ![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/R0.png)
 
