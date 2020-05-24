@@ -112,14 +112,14 @@ def Ajust_SUCQ(FILE,pop,extrapolação):
     N = pop*10**6
     t = days_mens
     So,Uo,Qo,Co = [.9*N,6*cumdata_cases[0],cumdata_cases[0],cumdata_cases[0]] # padrão [.8*N,6*cumdata_cases[0],cumdata_cases[0],cumdata_cases[0]]
-    alfa_0,beta_0,gama1_0= [.5/So,.31,.07] # padrão [.5/N,.1,.19]
+    alfa_0,beta_0,gama1_0= [.2/So,.3,.1] # padrão [.5/N,.1,.19]
 
     p0 = [alfa_0,beta_0,gama1_0,So,Uo,Qo,Co] 
 
-    bsup = [0.8/So,.50,.2 ,   N,Uo*2.,Qo*2.0,Co+10**-9]
-    binf = [0.2/So,.10,.01,.8*N,Uo*.5,Qo*0.5,Co-10**-9]
+    bsup = [0.4/So,.50,.20,   N,Uo*2.,Qo*2.0,Co+10**-9]
+    binf = [0.09/So,.05,.01,.7*N,Uo*.5,Qo*0.5,Co-10**-9]
     
-    p0 = ajust_curvefit(days_mens,cumdata_cases,p0,bsup,binf)
+    #p0 = ajust_curvefit(days_mens,cumdata_cases,p0,bsup,binf)
     popt = min_minimize(cumdata_cases,sucq_solve,p0,t,bsup,binf)
     alfa_0,beta_0,gama1_0,So,Uo,Qo,Co = popt 
 
@@ -133,7 +133,7 @@ def Ajust_SUCQ(FILE,pop,extrapolação):
     print("alfa = %f " % (alfa_0*So))
     print("beta = %f " % (beta_0))
     print("gamma = %f " % (gama1_0))
-    print("R = %f" %(alfa_0*N/gama1_0))
+    print("R = %f" %(alfa_0*So/gama1_0))
     print("NSE = %.5f " % (NSE))
     print("#######################")
     
@@ -164,17 +164,9 @@ onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
 
 extrapolação = 365
 
-#Manual Ajuste
-#FILE = onlyfiles[2]
-#
-#for i in população:
-#    if i[0] == FILE[9:-4]:
-#        pop = float(i[1])
-#    Ajust_SUCQ(FILE,pop,extrapolação)  
-
 #import mensured data
-estados = ['COVID-19 Brazil.csv','COVID-19 PE.csv', 'COVID-19 CE.csv']
-estados = onlyfiles
+estados = ['COVID-19 Brazil.csv']
+
 R = []
 for i in estados:
     FILE = i
@@ -195,17 +187,27 @@ names = np.array(x)
 
 df_R["Estados"] = names  
 
-df_R.to_csv(path_out+'/metrics.csv',sep=";")
+df_R = pd.read_csv(path_out+'/metrics.csv',header = 0,sep=";")
+
+for i in range(len(estados)):
+    a = R[i].tolist()
+    a.append(estados[i][9:-4])
+    df_R.loc[(df_R["Estados"] == estados[i][9:-4])] = [a]
+  
+#df_R = pd.DataFrame(R, columns = ["n1","R1","n2","R2","beta","gamma1","gamma2","eta","N","So","Uo","Qo","Co","R1o","R2o","nCo","NSE","RMSE","MARE","NSE_deaths","RMSE_deaths","MARE_deaths"])
+#df_R["Estado"] = estados
+
+df_R.to_csv(path_out+'/metrics.csv',sep=";",index = False)
   
 def bar_plt(atributo, title_name,df,logscale):
     fig, ax = plt.subplots(1, 1)
     df = df.sort_values(by=[atributo])
 
-    figure = df.plot.bar(ax =ax, x = "Estados", y = atributo, figsize = (15,8), legend = None,width=.75, logy = logscale)
+    figure = df.plot.bar(ax = ax, x = "Estados", y = atributo, figsize = (15,8), legend = None, width=.75, logy = logscale)
     figure.set_xlabel(" ")
     figure.set_title(title_name, family = "Serif", fontsize = 22)
     figure.tick_params(axis = 'both', labelsize  = 14)
-    figure.yaxis.set_major_formatter(plt.FuncFormatter(format_func)) 
+    #figure.yaxis.set_major_formatter(plt.FuncFormatter(format_func)) 
 
     for p in ax.patches:
        b = p.get_bbox()
@@ -216,7 +218,6 @@ def bar_plt(atributo, title_name,df,logscale):
     path_out ="C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/imagens/"
     fig.savefig(path_out+atributo+'_barplot.png', dpi = 300,bbox_inches='tight')
 
-bar_plt(atributo = "R", title_name = "Ro", df = df_R, logscale = True)
-bar_plt(atributo = "NSE", title_name = "NSE", df = df_R, logscale = True)
-
+bar_plt(atributo = "R", title_name = "Ro", df = df_R, logscale = False)
+bar_plt(atributo = "NSE", title_name = "NSE", df = df_R, logscale = False)
 

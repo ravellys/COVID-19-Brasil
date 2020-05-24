@@ -79,17 +79,15 @@ def Ajust_SUCQ(data_covid,pop,passo,j):
     day_last = day_last_str#np.array(day_last_str, dtype=np.datetime64)
     
     t = np.linspace(1,len(cumdata_cases),len(cumdata_cases))
-
-    N = pop*10**6
     So,Uo,Qo,Co = [.9*N,6*cumdata_cases[0],cumdata_cases[0],cumdata_cases[0]] # padrão [.8*N,6*cumdata_cases[0],cumdata_cases[0],cumdata_cases[0]]
-    alfa_0,beta_0,gama1_0= [.2/So,.31,.07] # padrão [.5/N,.1,.19]
-    
+    alfa_0,beta_0,gama1_0= [.2/So,.3,.1] # padrão [.5/N,.1,.19]
+
     p0 = [alfa_0,beta_0,gama1_0,So,Uo,Qo,Co] 
-    bsup = [0.8/So,.50,.2 ,   N,Uo*2.,Qo*2.0,Co+10**-9]
-    binf = [0.1/So,.10,.05,.8*N,Uo*.5,Qo*0.5,Co-10**-9]
+
+    bsup = [0.9/So,.50,.20,   N,Uo*2.,Qo*2.0,Co+10**-9]
+    binf = [0.1/So,.05,.01,.7*N,Uo*.5,Qo*0.5,Co-10**-9]
     
-    popt = ajust_curvefit(t,cumdata_cases,p0,bsup,binf)
-    p0 = popt
+    #p0 = ajust_curvefit(days_mens,cumdata_cases,p0,bsup,binf)
     popt = min_minimize(cumdata_cases,sucq_solve,p0,t,bsup,binf)
     alfa_0,beta_0,gama1_0,So,Uo,Qo,Co = popt 
     
