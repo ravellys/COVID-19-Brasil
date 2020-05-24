@@ -82,8 +82,8 @@ def min_minimize(cumdata_cases,sucq_solve,p0,t,bsup,binf):
     return res.x
 
 def Ajust_SUCQ(FILE,pop,extrapolação):    
-        
-    data_covid = pd.read_csv("DADOS/"+FILE, header = 0, sep = ";")
+    path = 'C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/data/DADOS/'
+    data_covid = pd.read_csv(path+FILE, header = 0, sep = ";")
     data_covid=data_covid[['DateRep','Cases']]
 
     nome_data = 'DateRep'
@@ -146,14 +146,15 @@ def Ajust_SUCQ(FILE,pop,extrapolação):
         estimativafutura_saída["Q"]=Cum_cases_estimated[:,2]
         estimativafutura_saída["I"] = Cum_cases_estimated[:,1]+Cum_cases_estimated[:,2]+Cum_cases_estimated[:,3]
         estimativafutura_saída["date"] = date_future
-        estimativafutura_saída.to_csv("C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/DADOS_estimados_sem_isolamento/"+FILE,sep=";")
+        fileout = 'C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/data/DADOS_estimados_sem_isolamento/'
+        estimativafutura_saída.to_csv(fileout+FILE,sep=";")
         if NSE >=0.9:
             return [alfa_0*N/gama1_0, FILE[9:-4]]
         
 população = [["Espanha",46.72],["Itália",60.43],["SP",45.92],["MG",21.17],["RJ",17.26],["BA",14.87],["PR",11.43],["RS",11.37],["PE",9.6],["CE",9.13],["PA",8.6],["SC",7.16],["MA",7.08],["GO",7.02],["AM", 4.14],["ES",4.02],["PB",4.02],["RN",3.51],["MT",3.49],["AL", 3.4],["PI",3.3],["DF",3.1],["MS",2.8],["SE",2.3],["RO",1.78],["TO",1.6],["AC",0.9],["AP",0.85],["RR",0.61],["Brazil",210.2]]
 população = np.array(população)
 
-mypath = 'C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/DADOS'
+mypath = 'C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/data/DADOS'
 onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
 
 #import mensured data
@@ -173,20 +174,18 @@ d = hj-dia_18
 d=d.astype(int)
 extrapolação = d+7
 
-R = []
-for i in onlyfiles:
-    FILE = i
-    for i in população:
-        if i[0] == FILE[9:-4]:
-            pop = float(i[1])
-    
-    R.append(Ajust_SUCQ(FILE,pop,extrapolação))   
+#R = []
+#for i in onlyfiles:
+#    FILE = i
+#    for i in população:
+#        if i[0] == FILE[9:-4]:
+#            pop = float(i[1])
+#    
+#    R.append(Ajust_SUCQ(FILE,pop,extrapolação))   
 
-mypath2 = 'C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/Dados_site'
-onlyfiles2 = [f for f in listdir(mypath2) if isfile(join(mypath2, f))]
-mypath3 = 'C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/DADOS_estimados_sem_isolamento'
+mypath3 = 'C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/data/DADOS_estimados_sem_isolamento'
 onlyfiles3 = [f for f in listdir(mypath3) if isfile(join(mypath3, f))]
-mypath4 = 'C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/DADOS_estimados'
+mypath4 = 'C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/data/DADOS_estimados'
 
 fig,ax = plt.subplots(1, 1)
 ax.set_xlim(np.array("2020-02-20", dtype=np.datetime64), np.array("2020-04-04", dtype=np.datetime64))
@@ -225,7 +224,7 @@ for i in estados:
     data_covid2[FILE[9:-4]] = data_covid2["cum-Cases"]
 
     figure2 = data_covid2.plot(ax = ax, kind = "line",x = 'datetime', y = FILE[9:-4],
-                               style = Color[cont]+'o-', grid = True,rot = 90,figsize= (8,6))   
+                               style = Color[cont]+'o-', grid = True,rot = 90,figsize= (10,6))   
     cont =cont+1
     data_1 = pd.read_csv(mypath4+'/'+FILE, header = 0, sep = ";")
 
@@ -248,11 +247,27 @@ figure.set_xlabel(" ")
 figure.yaxis.set_major_formatter(plt.FuncFormatter(format_func)) 
 
 figure.axvline(pd.to_datetime('2020-03-20'), color='gray', linestyle='--', lw=2)
-figure.text(pd.to_datetime('2020-03-20'),2*10**3, "social mitigation", fontsize=12,
+figure.text(pd.to_datetime('2020-03-20'),1, "social mitigation", fontsize=12,
                rotation=90, rotation_mode='anchor')
 
 figure.axvline(pd.to_datetime('2020-04-01'), color='gray', linestyle='--', lw=2)
-figure.text(pd.to_datetime('2020-04-01'),10**5, "New tests", fontsize=12,
+figure.text(pd.to_datetime('2020-04-01'),1, "New tests", fontsize=12,
+               rotation=90, rotation_mode='anchor')    
+
+figure.axvline(pd.to_datetime('2020-04-17'), color='gray', linestyle='--', lw=2)
+figure.text(pd.to_datetime('2020-04-17'),1, "change in the ministry of health", fontsize=12,
+               rotation=90, rotation_mode='anchor')
+
+figure.axvline(pd.to_datetime('2020-04-21'), color='gray', linestyle='--', lw=2)
+figure.text(pd.to_datetime('2020-04-21'),1, "ICU saturation*", fontsize=12,
+               rotation=90, rotation_mode='anchor') 
+
+figure.axvline(pd.to_datetime('2020-04-26'), color='gray', linestyle='--', lw=2)
+figure.text(pd.to_datetime('2020-04-26'),1, "relaxation of the quarantine", fontsize=12,
+               rotation=90, rotation_mode='anchor')  
+
+figure.axvline(pd.to_datetime('2020-05-18'), color='gray', linestyle='--', lw=2)
+figure.text(pd.to_datetime('2020-05-18'),1, "lockdown", fontsize=12,
                rotation=90, rotation_mode='anchor')
 
 #im_ufpe = plt.imread(get_sample_data('C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/imagens/ufpe_logo.png'))
@@ -269,10 +284,12 @@ Now = str(date_rng[-1:][0])
 
 plt.show()
 
-fig.savefig('C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/COVID-19-Brasil/imagens/cum_cases.png', dpi = 300,bbox_inches='tight',transparent = True)
+file_out = 'C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/imagens/cum_cases.png'
+
+fig.savefig(file_out, dpi = 300,bbox_inches='tight',transparent = True)
 
 ##########################################
-mypath = 'C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/DADOS'
+mypath = 'C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/data/DADOS'
 onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
 
 inf  = []   
@@ -332,7 +349,9 @@ for i in onlyfiles:
     figure.text(pd.to_datetime('2020-03-17'),2*10**3, "mitigation policies", fontsize=12,
                 rotation=90, rotation_mode='anchor')
     #plt.show()
-    fig.savefig('C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/COVID-19-Brasil/imagens/cum-cases/'+FILE[:-4]+".png", dpi = 300,bbox_inches='tight',transparent = True)
+    file_out = 'C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/imagens/cum-cases/'
+    fig.savefig(file_out+FILE[:-4]+".png", dpi = 300,bbox_inches='tight',transparent = True)
+    
     plt.close()
     max_cases = max(data_covid1["current trend"])
     max_day = data_covid1["datetime"].values[-1:][0]
@@ -347,7 +366,8 @@ for i in range(len(inf)):
 
 df_inf = pd.DataFrame(inf[:,0], columns = ["Estado"])
 df_inf["cases_7d"] = np.array(inf_num)
-path_out ="C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/Richards_covid19/data/inf/"
+
+path_out ='C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/data/inf/'
 df_inf.to_csv(path_out+"inf_7d.csv",sep=";")
 
 
@@ -366,8 +386,6 @@ def bar_plt(atributo, title_name,df,logscale):
         val = format_func(b.y1 + b.y0,1)        
         ax.annotate(val, ((b.x0 + b.x1)/2, b.y1), fontsize = 14,ha='center', va='top',rotation = 90)
     
-    Now = str(date_rng[-1:][0])
-
 #    newax0 = fig.add_axes([.025,-.15, 1, 1], anchor='NE')
 #    newax0.text(.1, .1,"Fonte dos dados: Ministério da Saúde do Brasil \nAutores: Artur Coutinho, Lucas Ravellys, Lucio Camara e Silva, Maira Pitta, Anderson Almeida\nData da atualização: "+Now, family = "Verdana")
 #    newax0.axis('off')
@@ -377,8 +395,8 @@ def bar_plt(atributo, title_name,df,logscale):
 #    newax2.axis('off')    
                 
     plt.show()
-    path_out ="C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/COVID-19-Brasil/imagens/"
-    fig.savefig(path_out+atributo+'_barplot.png', dpi = 300,bbox_inches='tight',transparent = True)
+    path_out ="C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/imagens/"
+    fig.savefig(path_out+atributo+'_barplot.png', dpi = 300,bbox_inches='tight')
 
 bar_plt(atributo = "cases_7d", title_name = "Forecast of total cases over the next 7 days", df = df_inf, logscale = True)
 

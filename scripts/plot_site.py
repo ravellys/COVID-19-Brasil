@@ -18,15 +18,12 @@ def desacum(X):
         a.append(X[i+1]-X[i])
     return a
 
-mypath = 'C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/Dados_estimados'
+mypath = 'C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/data/DADOS_estimados'
 onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
-
-mypath2 = 'C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/Dados_site'
-onlyfiles2 = [f for f in listdir(mypath2) if isfile(join(mypath, f))]
 
 população = [["Espanha",46.72],["Itália",60.43],["SP",45.92],["MG",21.17],["RJ",17.26],["BA",14.87],["PR",11.43],["RS",11.37],["PE",9.6],["CE",9.13],["PA",8.6],["SC",7.16],["MA",7.08],["GO",7.02],["AM", 4.14],["ES",4.02],["PB",4.02],["RN",3.51],["MT",3.49],["AL", 3.4],["PI",3.3],["DF",3.1],["MS",2.8],["SE",2.3],["RO",1.78],["TO",1.6],["AC",0.9],["AP",0.85],["RR",0.61],["Brazil",210.2]]
 população = np.array(população)
-estados = ["COVID-19 Brazil.CSV","COVID-19 PE.CSV", "COVID-19 CE.CSV"]
+estados = ["COVID-19 Brazil.CSV","COVID-19 PE.CSV", "COVID-19 CE.CSV", "COVID-19 AM.CSV", "COVID-19 DF.CSV", "COVID-19 PR.CSV", "COVID-19 SP.CSV", "COVID-19 RJ.CSV"]
 
 
 fig,ax = plt.subplots(1, 1)
@@ -56,24 +53,11 @@ figure.set_title("percentage of the daily cases", family = "Serif", fontsize = 1
 figure.set_xlabel(" ")
 figure.legend(loc='center left',bbox_to_anchor=(1.0, 0.5))
 
-im_ufpe = plt.imread(get_sample_data('C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/imagens/ufpe_logo.png'))
-
-inicio = str(data["date"][0])
-fim = str(data["date"].values[-366:][0])
-
-#newax0 = fig.add_axes([.025,-.15, 1, 1], anchor='NE')
-#newax0.text(.1, .1,"Fonte dos dados: Ministério da Saúde do Brasil \nAutores: Artur Coutinho, Lucas Ravellys, Lucio Camara e Silva, Maira Pitta, Anderson Almeida\nIntervalo de dias ajustados: "+ inicio + " a " + fim, family = "Verdana")
-#newax0.axis('off')
-#
-#newax2 = fig.add_axes([.135,.725, 0.15, 0.15], anchor='NW')
-#newax2.imshow(im_ufpe)
-#newax2.axis('off')
-
 plt.show()
 
-fig.savefig('C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/COVID-19-Brasil/imagens/daily_cases/daily_cases.png', dpi = 300,bbox_inches='tight',transparent = True)
-
-####################################### 
+file_out = 'C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/imagens/daily_cases.png'
+fig.savefig(file_out, dpi = 300,bbox_inches='tight')
+###################################### 
 
 
 inf = []
@@ -112,50 +96,34 @@ for i in onlyfiles:
     figure.set_xlabel(" ")
     figure.yaxis.set_major_formatter(plt.FuncFormatter(format_func)) 
     figure.legend(loc='center left',bbox_to_anchor=(1.0, 0.5))
-
+    plt.show()
     
-    im_ufpe = plt.imread(get_sample_data('C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/imagens/ufpe_logo.png'))
-
-
-#    inicio = str(data["date"][0])
-#    fim = str(data["date"].values[-366:][0])
-#
-#    newax0 = fig.add_axes([.025,-.15, 1, 1], anchor='NE')
-#    newax0.text(.1, .1,"Fonte dos dados: Ministério da Saúde do Brasil \nAutores: Artur Coutinho, Lucas Ravellys, Lucio Camara e Silva, Maira Pitta, Anderson Almeida\nIntervalo de dias ajustados: "+ inicio + " a " + fim, family = "Verdana")
-#    newax0.axis('off')
-#
-#    newax2 = fig.add_axes([.135,.725, 0.15, 0.15], anchor='NW')
-#    newax2.imshow(im_ufpe)
-#    newax2.axis('off')
-
-    plt.close()
-
-    fig.savefig('C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/COVID-19-Brasil/imagens/daily_cases/'+ FILE[9:-4]+'.png', dpi = 300,bbox_inches='tight',transparent = True)
+    file_out = 'C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/imagens/daily_cases/'
+    fig.savefig(file_out+ FILE[9:-4]+'.png', dpi = 300,bbox_inches='tight')
 
 inf = np.array(inf)
-
 df_inf = pd.DataFrame(inf, columns = ["Estado","max_cases","diamax","datamax"])
-path_out ="C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/COVID-19-Brasil/"
+path_out ='C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/'
 df_inf.to_csv(path_out+"inf_max_day.csv",sep=";")
 
 def bar_plt(atributo, title_name,df,logscale):
     fig, ax = plt.subplots(1, 1)
     df = df.sort_values(by=[atributo])
 
-    figure = df.plot.bar(ax =ax, x = "Estado", y =atributo,figsize = (15,8), legend = None,width=.75, logy = logscale)
+    figure = df.plot.bar(ax =ax, x = "Estado", y = atributo, figsize = (15,8), legend = None,width=.75, logy = logscale)
     figure.set_xlabel(" ")
     figure.set_title(title_name, family = "Serif", fontsize = 22)
     figure.tick_params(axis = 'both', labelsize  = 14)
-    figure.yaxis.set_major_formatter(plt.FuncFormatter(format_func)) 
-
-    for p in ax.patches:
-        b = p.get_bbox()
-        val = format_func(b.y1 + b.y0,1)        
-        ax.annotate(val, ((b.x0 + b.x1)/2, b.y1), fontsize = 14,ha='center', va='top',rotation = 90)
-
+#    figure.yaxis.set_major_formatter(plt.FuncFormatter(format_func)) 
+#
+#    for p in ax.patches:
+#       b = p.get_bbox()
+#       val = format_func(b.y1 + b.y0,1)        
+#       ax.annotate(val, ((b.x0 + b.x1)/2, b.y1), fontsize = 14,ha='center', va='top',rotation = 90)
+#  
     plt.show()
-    path_out ="C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/COVID-19-Brasil/imagens/"
-    fig.savefig(path_out+atributo+'_barplot.png', dpi = 300,bbox_inches='tight',transparent = True)
+    path_out ="C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/imagens/"
+    fig.savefig(path_out+atributo+'_barplot.png', dpi = 300,bbox_inches='tight')
 
 bar_plt(atributo = "diamax", title_name = "Number of days between start of adjustment \nand the peak of the epidemic", df = df_inf, logscale = True)
 bar_plt(atributo = "max_cases", title_name = "Maximum number of daily cases", df = df_inf, logscale = True)

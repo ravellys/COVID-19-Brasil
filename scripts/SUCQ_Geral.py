@@ -113,7 +113,8 @@ def add_daily_plot(path,FILE,fig,row, col, pop):
     figure.yaxis.set_major_formatter(plt.FuncFormatter(format_func))
     #ax.yaxis.set_major_formatter(plt.FuncFormatter(format_func))
     plt.show()
-    plt.savefig("C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/COVID-19-Brasil/plot_sucq/"+FILE[:-4]+".png", dpi = 300,bbox_inches='tight')
+    path_out ='C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/plot_sucq/'
+    plt.savefig(path_out+FILE[:-4]+".png", dpi = 300,bbox_inches='tight')
     
     x = data_covid.date[1:]
     y1 = desacum(data_covid.Cases)[1:]
@@ -124,10 +125,10 @@ def add_daily_plot(path,FILE,fig,row, col, pop):
             ),
         row =row, col=col)
     
-mypath2 = 'C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/DADOS_estimados'
+mypath2 = 'C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/data/DADOS_estimados'
 onlyfiles2 = [f for f in listdir(mypath2) if isfile(join(mypath2, f))]
     
-mypath = 'C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/DADOS'
+mypath = 'C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/data/DADOS'
 onlyfiles = [f for f in listdir(mypath2) if isfile(join(mypath, f))]
 
 população = [["Espanha",46.72],["Itália",60.43],["SP",45.92],["MG",21.17],["RJ",17.26],["BA",14.87],["PR",11.43],["RS",11.37],["PE",9.6],["CE",9.13],["PA",8.6],["SC",7.16],["MA",7.08],["GO",7.02],["AM", 4.14],["ES",4.02],["PB",4.02],["RN",3.51],["MT",3.49],["AL", 3.4],["PI",3.3],["DF",3.1],["MS",2.8],["SE",2.3],["RO",1.78],["TO",1.6],["AC",0.9],["AP",0.85],["RR",0.61],["Brazil",210.2]]
@@ -137,7 +138,7 @@ fig =  make_subplots(rows=2, cols=2,shared_xaxes=True, vertical_spacing=0.02, ho
 estados = ["COVID-19 Brazil.CSV","COVID-19 PE.CSV", "COVID-19 CE.CSV"]
 
 
-for i in estados:
+for i in onlyfiles:
     FILE = i
     for i in população:
         if i[0] == FILE[9:-4]:

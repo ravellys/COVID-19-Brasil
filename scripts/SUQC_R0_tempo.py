@@ -79,13 +79,14 @@ def Ajust_SUCQ(data_covid,pop,passo,j):
     day_last = day_last_str#np.array(day_last_str, dtype=np.datetime64)
     
     t = np.linspace(1,len(cumdata_cases),len(cumdata_cases))
-    N = pop*10**6
-    alfa_0,beta_0,gama1_0= [.4/N,.2,.2] 
-    So,Uo,Qo,Co = [.8*N,6*cumdata_cases[0],cumdata_cases[0],cumdata_cases[0]]
 
+    N = pop*10**6
+    So,Uo,Qo,Co = [.9*N,6*cumdata_cases[0],cumdata_cases[0],cumdata_cases[0]] # padrão [.8*N,6*cumdata_cases[0],cumdata_cases[0],cumdata_cases[0]]
+    alfa_0,beta_0,gama1_0= [.2/So,.31,.07] # padrão [.5/N,.1,.19]
+    
     p0 = [alfa_0,beta_0,gama1_0,So,Uo,Qo,Co] 
-    bsup = [.8/N,.5,.6,N,Uo*1.5,Qo*1.2,Co+10**-9]
-    binf = [.2/N,.1,.05,.5*N,Uo*.5,Qo*0.8,Co-10**-9]
+    bsup = [0.8/So,.50,.2 ,   N,Uo*2.,Qo*2.0,Co+10**-9]
+    binf = [0.1/So,.10,.05,.8*N,Uo*.5,Qo*0.5,Co-10**-9]
     
     popt = ajust_curvefit(t,cumdata_cases,p0,bsup,binf)
     p0 = popt
@@ -95,7 +96,7 @@ def Ajust_SUCQ(data_covid,pop,passo,j):
     solution = SUCQ(t,alfa_0,beta_0,gama1_0,So,Uo,Qo,Co)
     NSE = hy.nse(np.log10(cumdata_cases),np.log10(solution[:,3]))
     if NSE >= 0.25:
-        return [alfa_0*N/gama1_0, day_last]
+        return [alfa_0*So/gama1_0, day_last]
     else:
         return [ np.nan, day_last]
  
@@ -103,7 +104,7 @@ def Ajust_SUCQ(data_covid,pop,passo,j):
 população = [["Espanha",46.72],["Itália",60.43],["SP",45.92],["MG",21.17],["RJ",17.26],["BA",14.87],["PR",11.43],["RS",11.37],["PE",9.6],["CE",9.13],["PA",8.6],["SC",7.16],["MA",7.08],["GO",7.02],["AM", 4.14],["ES",4.02],["PB",4.02],["RN",3.51],["MT",3.49],["AL", 3.4],["PI",3.3],["DF",3.1],["MS",2.8],["SE",2.3],["RO",1.78],["TO",1.6],["AC",0.9],["AM",0.85],["RR",0.61],["Brazil",210.2]]
 população = np.array(população)
 
-mypath = 'C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/DADOS/'
+mypath = 'C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/data/DADOS'
 onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
 
 #import mensured data
@@ -120,7 +121,7 @@ for i in onlyfiles:
         if p[0] == FILE[9:-4]:
             pop = float(p[1])
     
-    data_covid = pd.read_csv(mypath+FILE, header = 0, sep = ";")
+    data_covid = pd.read_csv(mypath+'/'+FILE, header = 0, sep = ";")
     for j in range(len(data_covid)-passo+1):
         ajust = Ajust_SUCQ(data_covid,pop,passo,j)
         if ajust == None:
@@ -132,8 +133,10 @@ for i in onlyfiles:
     df_R['datetime'] = pd.to_datetime(df_R['data'])
     df_R = df_R.set_index('datetime')
     df_R=df_R[[FILE[9:-4]]].astype(float)
+    
+    file_out = 'C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/data/R0_data/'
 
-    df_R.to_csv("C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/R0_data/"+FILE,sep=";")
+    df_R.to_csv(file_out+FILE,sep=";")
     figure = df_R.plot(ax = ax, kind = "line",style = 'o-',grid = True,rot = 90,figsize= (8,6))
     figure.legend(loc='center left',bbox_to_anchor=(1.0, 0.5))
 
@@ -156,8 +159,8 @@ for i in onlyfiles:
 #    newax2.axis('off')
 
     plt.show()
-
-    fig.savefig('C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/COVID-19-Brasil/imagens/R0_time/'+FILE[9:-4]+'.png', dpi = 300,bbox_inches='tight',transparent = True)
+    file_out = 'C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/imagens/R0_time/'
+    fig.savefig(file_out+FILE[9:-4]+'.png', dpi = 300,bbox_inches='tight')
     
     
 #df_R['datetime'] = pd.to_datetime(df_R['data'])
@@ -219,4 +222,5 @@ figure.set_xlabel(" ")
 
 plt.show()
 
-fig.savefig('C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/COVID-19-Brasil/imagens/R0_time/R0_estad.png', dpi = 300,bbox_inches='tight',transparent = True)
+file_out = 'C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/imagens/R0_time/R0_estad.png'
+fig.savefig(file_out, dpi = 300,bbox_inches='tight')

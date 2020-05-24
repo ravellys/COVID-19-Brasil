@@ -12,7 +12,7 @@ def format_func(value, tick_number=None):
     value = round(value / 1000**num_thousands, 1)
     return f'{value:g}'+' KMGTPEZY'[num_thousands]
 
-mypath = 'C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/DADOS'
+mypath = 'C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/data/DADOS'
 onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
 
 mort = []
@@ -35,7 +35,6 @@ df = df.sort_values(by = ["mortalidade"])
 
 fig, ax = plt.subplots(1, 1)
 
-im_ufpe = plt.imread(get_sample_data('C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/imagens/ufpe_logo.png'))
 
 figure = df.plot.bar(ax =ax, x = "estado", y ="mortalidade",figsize = (15,8), legend = None, width = 0.75)
 figure.set_xlabel(" ")
@@ -62,11 +61,11 @@ Now = str(date_rng[-1:][0][0])
 #newax2.axis('off')
 
 plt.show()
-
-fig.savefig('C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/COVID-19-Brasil/imagens/mortality.png', dpi = 300,bbox_inches='tight',transparent = True)
+fileout = 'C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/imagens/mortality.png'
+fig.savefig(fileout, dpi = 300,bbox_inches='tight')
 
 #################################
-mypath2 = 'C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/DADOS_estimados'
+mypath2 = 'C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/data//DADOS_estimados'
 onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
 
 mort = []
@@ -94,8 +93,6 @@ df = df.sort_values(by = ["mortalidade"])
 
 fig, ax = plt.subplots(1, 1)
 
-im_ufpe = plt.imread(get_sample_data('C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/imagens/ufpe_logo.png'))
-
 figure = df.plot.bar(ax =ax, x = "estado", y ="mortalidade",figsize = (15,8), legend = None, width = .75)
 figure.set_xlabel(" ")
 #figure.set_title("Mortality Rate \n total deaths per all infected", family = "Serif", fontsize = 18)
@@ -122,8 +119,8 @@ Now = str(date_rng[-1:][0][0])
 #newax2.axis('off')
 
 plt.show()
-
-fig.savefig('C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/COVID-19-Brasil/imagens/mortality_real_estimada.png', dpi = 300,bbox_inches='tight',transparent = True)
+fileout = 'C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/imagens/mortality_real_estimada.png'
+fig.savefig(fileout, dpi = 300,bbox_inches='tight')
 
 #######
 df = pd.DataFrame(mort_total, columns = ["mortalidade"])
@@ -131,8 +128,6 @@ df["estado"] = est
 df = df.sort_values(by = ["mortalidade"])
 
 fig, ax = plt.subplots(1, 1)
-
-im_ufpe = plt.imread(get_sample_data('C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/imagens/ufpe_logo.png'))
 
 figure = df.plot.bar(ax =ax, x = "estado", y ="mortalidade",figsize = (15,8), legend = None,logy = True, width = .75)
 figure.set_xlabel(" ")
@@ -145,7 +140,7 @@ for p in ax.patches:
     b = p.get_bbox()
     
     val = format_func(b.y1 + b.y0)        
-    ax.annotate(val, ((b.x0 + b.x1)/2, b.y1*1.5),rotation =90, fontsize = 14,ha='center', va='top')
+    ax.annotate(val, ((b.x0 + b.x1)/2, b.y1),rotation =90, fontsize = 14,ha='center', va='top')
 
 figure.yaxis.set_major_formatter(plt.FuncFormatter(format_func)) 
 
@@ -161,5 +156,6 @@ Now = str(date_rng[-1:][0][0])
 #newax2.axis('off')
 
 plt.show()
+fileout = 'C:/Users/ravellys/Documents/GitHub/COVID-19-Brasil/COVID-19-Brasil/imagens/total de mortes.png'
+fig.savefig(fileout, dpi = 300,bbox_inches='tight')
 
-fig.savefig('C:/Users/ravel/OneDrive/Área de Trabalho/DataScientist/sklearn/COVID-19/CasosPorEstado/COVID-19-Brasil/imagens/total de mortes.png', dpi = 300,bbox_inches='tight',transparent = True)
