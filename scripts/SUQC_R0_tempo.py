@@ -78,6 +78,7 @@ def Ajust_SUCQ(data_covid,pop,passo,j):
     day_last_str = data[:4]+'-'+data[5:7]+'-'+data[-2:]
     day_last = day_last_str#np.array(day_last_str, dtype=np.datetime64)
     
+    N = pop*10**6
     t = np.linspace(1,len(cumdata_cases),len(cumdata_cases))
     So,Uo,Qo,Co = [.9*N,6*cumdata_cases[0],cumdata_cases[0],cumdata_cases[0]] # padrão [.8*N,6*cumdata_cases[0],cumdata_cases[0],cumdata_cases[0]]
     alfa_0,beta_0,gama1_0= [.2/So,.3,.1] # padrão [.5/N,.1,.19]
