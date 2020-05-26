@@ -47,7 +47,7 @@ Nota-se também que o número de casos estimados com a tendência inicial em amb
 
 Um dos índices mais importande no combate a disseminação viral é o número de Reprodutividade. o R0 nos indica a taxa média de contaminação de pessoas por um infectado. Na Figura abaixo é apresentado o R0 no Brasil e nos seus estados.
 
-![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/R0.png)
+![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/R_barplot.png)
 
 ## Avaliação da Letalidade 
 
