@@ -21,7 +21,7 @@ onde:
 * e R = alfa/gamma1 é o número de reprodução vírus
 
 ## Output do modelo 
-Na Figura abaixo são demonstrados as variavéis de saída do modelo em uma simulação de 365 dias a partir do dia 01 de abril.
+Na Figura abaixo são demonstrados as variavéis de saída do modelo em uma simulação de 365 dias.
 
 ![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/plot_sucq/COVID-19%20Brazil.png)
   
@@ -39,13 +39,9 @@ Nota-se também que o número de casos estimados com a tendência inicial em amb
 
 ## Simulação do pico de infectados
 
-Nos cenário atual, os estado de Pernambuco e do Ceará obtiveram o pico simulado no ínicio de mês de julho. Já o Brasil apresentou o pico simulado no mês de agosto. Nota-se também um maior achatamento na curva do Brasil que nos outros estados.
-
 ![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/daily_cases/daily_cases.png)
 ![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/diamax_barplot.png)
 ![Image of EDOSUCQ](https://github.com/ravellys/COVID-19-Brasil/blob/master/imagens/max_cases_barplot.png)
-
-
 
 ## Simulação do número de Reprodutividade (R0)
 
